@@ -16,3 +16,25 @@ class SchemaStudent(Schema):
     age = fields.Int()
     dob = fields.DateTime()
     graduated = fields.Boolean()
+        """
+        all field type
+            Dict
+            List
+            Tuple,
+            String,
+            UUID,
+            Number,
+            Integer,
+            Decimal,
+            Boolean,
+            Float,
+            DateTime,
+            Time,
+            Date,
+            TimeDelta,
+            Url,
+            Email,
+            Str,
+            Bool,
+            Int
+        """

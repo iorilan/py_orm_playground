@@ -25,7 +25,18 @@ class UserSchema(Schema):
     level = fields.Integer(required=True, validate=validate.OneOf([1,2,3]))
     age = fields.Integer(validate=validate.Range(min=15,max=20))
     # more validators https://marshmallow.readthedocs.io/en/stable/marshmallow.validate.html#marshmallow.validate.OneOf
-
+    """
+        ContainsOnly: validates that the value is a subset of the values from the validation,
+        Email: validates that the value is an email,
+        Equal: validates by comparing value with the validation value,
+        Length: validates the length of the value using len(),
+        NoneOf: validates that the value is a sequence and that it is mutually exclusive from the validation value,
+        OneOf: validates that the value is one of the values from the validation,
+        Predicate: validates by calling the method specified in the value of the validation,
+        Range: validates against a range,
+        Regexp: validates with a regular expression,
+        URL: validates that the value is a URL.
+    """
     @validates_schema
     def class_level(self, data, **kwargs):
         if len(data["firstname"]) + len(data["lastname"]) > 20:

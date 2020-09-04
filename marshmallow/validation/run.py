@@ -4,7 +4,8 @@ from marshmallow import Schema, ValidationError
 
 def test(obj):
     try:
-        print(UserSchema().load(obj))
+        #the behavior to take on unknown fields (EXCLUDE, INCLUDE, RAISE)
+        print(UserSchema( unknown='EXCLUDE').load(obj))
 
     except ValidationError as err:
         print(err.messages)
